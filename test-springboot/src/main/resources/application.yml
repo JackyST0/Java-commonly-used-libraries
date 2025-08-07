@@ -1,0 +1,32 @@
+server:
+  port: 8081
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+spark:
+  app:
+    name: fat
+  master:
+    uri: local[*]
+custom:
+  uploadFilePath: E:\local-projects\test-springboot\src\main\resources\file
+  swagger:
+    enable: true
+    basePackage: com.example.testspringboot.controller
+    title: 测试文档
+    description: 测试文档
+    serviceUrl: http://localhost:8081/swagger-ui.html
+    version: 1.0
+xxl:
+  job:
+    admin:
+      addresses: http://127.0.0.1:9090/xxl-job-admin
+      accessToken: default_token
+    executor:
+      appname: xxl-job-executor-sample
+      address:
+      ip:
+      port: 9999
+      logpath: ./log/applogs/xxl-job/jobhandler
+      logretentiondays: 30
